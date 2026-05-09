@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background-color: #615454;
+  color: #333;
+}
+
+/* APP SHELL LAYOUT */
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-area {
+  display: flex;
+  flex: 1;
+}
+
+.content {
+  flex: 1;
+  padding: 24px;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #e63946;
+  color: white;
+  padding: 14px 24px;
+}
+
+.navbar-brand {
+  color: white;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 200px;
+  background-color: #fff;
+  border-right: 1px solid #e0e0e0;
+  padding: 24px 16px;
+}
+
+.sidebar h3 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #999;
+  margin-bottom: 16px;
+}
+
+.sidebar ul { list-style: none; }
+
+.sidebar li { margin-bottom: 10px; }
+
+.sidebar a {
+  text-decoration: none;
+  color: #444;
+  display: block;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+  background-color: #fde8ea;
+  color: #e63946;
+}
+
+/* FOOTER */
+.footer {
+  background-color: #333;
+  color: #ccc;
+  text-align: center;
+  padding: 14px;
+  font-size: 14px;
+}
+
+.footer a { color: #e63946; text-decoration: none; }

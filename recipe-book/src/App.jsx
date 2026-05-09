@@ -11,9 +11,15 @@ import RecipeDetailsPage from "./pages/RecipeDetailsPage";
 import AboutPage from "./pages/AboutPage";
 import NotFoundPage from "./pages/NotFoundPage";
 
+import initialRecipes from "./data/recipes.json";
+
 import "./App.css";
+import { useState } from "react";
+
+
 
 function App() {
+  const [recipes, setRecipes] = useState(initialRecipes);
   return (
     
       <div className="app-layout">
@@ -22,7 +28,7 @@ function App() {
           <Sidebar />
           <main className="content">
             <Routes>
-              <Route path="/" element={<DashboardPage />} />
+              <Route path="/" element={<DashboardPage recipes={recipes} onDeleteRecipe={handleDeleteRecipe} />} />
               <Route path="/recipes/:id" element={<RecipeDetailsPage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="*" element={<NotFoundPage />} />
@@ -33,6 +39,15 @@ function App() {
       </div>
     
   );
+
+  
+
+  function handleDeleteRecipe(idToDelete) {
+    const updatedRecipes = recipes.filter(function(recipe) {
+      return recipe.id !== idToDelete;
+    });
+    setRecipes(updatedRecipes);
+  }
 }
 
 export default App;

@@ -3,7 +3,7 @@ import RecipeList from "../components/RecipeList";
 import RecipesArr from "../data/recipes.json";
 
 function DashboardPage() {
-  const [recipes, setRecipes] = useState([RecipesArr]);
+  const [recipes, setRecipes] = useState(RecipesArr);
 
   const onDeleteRecipe = (id) => {
     setRecipes(recipes.filter(recipe => recipe.id !== id));

@@ -1,5 +1,4 @@
 // import { useState } from "react";
-import { BrowserRouter as Router } from "react-router"
 import { Routes, Route } from "react-router"
 
 import Navbar from "./components/Navbar";
@@ -21,23 +20,21 @@ import { useState } from "react";
 function App() {
   const [recipes, setRecipes] = useState(initialRecipes);
   return (
-    
-      <div className="app-layout">
-        <Navbar />
-        <div className="main-area">
-          <Sidebar />
-          <main className="content">
-            <Routes>
-              <Route path="/" element={<DashboardPage recipes={recipes} onDeleteRecipe={handleDeleteRecipe} />} />
-              <Route path="/recipes/:id" element={<RecipeDetailsPage />} />
-              <Route path="/about" element={<AboutPage />} />
-              <Route path="*" element={<NotFoundPage />} />
-            </Routes>
-          </main>
-        </div>
-        <Footer />
+    <div className="app-layout">
+      <Navbar />
+      <div className="main-area">
+        <Sidebar />
+        <main className="content">
+          <Routes>
+            <Route path="/" element={<DashboardPage recipes={recipes} onDeleteRecipe={handleDeleteRecipe} />} />
+            <Route path="/recipes/:id" element={<RecipeDetailsPage recipes={recipes} onDeleteRecipe={handleDeleteRecipe} />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </main>
       </div>
-    
+      <Footer />
+    </div>
   );
 
   

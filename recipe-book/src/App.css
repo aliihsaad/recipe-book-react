@@ -119,6 +119,13 @@ body {
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   transition: transform 0.2s;
 }
+
+.recipe-card-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
 .recipe-card:hover { transform: translateY(-3px); }
 
 .recipe-card-img { width: 100%; height: 160px; object-fit: cover; }
